@@ -21,7 +21,11 @@ namespace Game
             mediationBinder.Bind<HelloWorldView>().To<HelloWorldMediator>();
 
             // bind our interface to a concrete implementation
-            injectionBinder.Bind<ISomeManager>().To<ManagerAsNormalClass>().ToSingleton();
+            //injectionBinder.Bind<ISomeManager>().To<ManagerAsNormalClass>().ToSingleton();
+
+            // bind the manager implemented as a MonoBehaviour
+            ManagerAsMonoBehaviour manager = GameObject.Find("Manager").GetComponent<ManagerAsMonoBehaviour>();
+            injectionBinder.Bind<ISomeManager>().ToValue(manager);
         }
     }
 
