@@ -16,6 +16,12 @@ namespace Game
             base.mapBindings();
             // we bind a command to StartSignal since it is invoked by SignalContext (the parent class) on Launch()
             commandBinder.Bind<StartSignal>().To<HelloWorldStartCommand>().Once();
+
+            // bind our view to its mediator
+            mediationBinder.Bind<HelloWorldView>().To<HelloWorldMediator>();
+
+            // bind our interface to a concrete implementation
+            injectionBinder.Bind<ISomeManager>().To<ManagerAsNormalClass>().ToSingleton();
         }
     }
 
