@@ -1,2 +1,1 @@
-# StrangeIOC_HelloWorld
-A simple "Hello World" program using Strange IoC
+This Unity project is a “Hello World” example of using the Strange IoC framework. It is based on The Big Strange HowTo (http://strangeioc.github.io/strangeioc/TheBigStrangeHowTo.html) documentation and other tutorials. This example displays simple usage of injection binding, command binding, and mediation binding, while utilizing Signals instead of Events.
